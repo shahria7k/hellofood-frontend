@@ -1,0 +1,26 @@
+.addItem-form {
+	padding: 20px 40px;
+	border-radius: 20px;
+	box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+	position: relative;
+	min-height: 500px;
+	min-width: 300px;
+	max-width: 1200px;
+	width: calc(100vw - 50px);
+	margin: 0 auto;
+	text-align: start;
+}
+.addItem-form form {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-column-gap: 30px;
+}
+.addItem {
+	margin: ;
+}
+.image {
+	height: 200px;
+}
+.btn-upload {
+	width: 100px;
+}

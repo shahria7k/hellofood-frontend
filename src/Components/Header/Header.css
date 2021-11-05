@@ -1,0 +1,150 @@
+.navigation-custom {
+	position: fixed;
+	width: 300px;
+	height: 100%;
+	background-color: var(--black);
+	border-left: 10px solid var(--black);
+	transition: 0.5s;
+	overflow: hidden;
+}
+.navigation-custom ul {
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 0;
+	width: 100%;
+}
+.navigation-custom ul li {
+	position: relative;
+	width: 100%;
+	list-style-type: none;
+	border-top-left-radius: 30px;
+	border-bottom-left-radius: 30px;
+}
+.navigation-custom ul li::selection {
+	color: transparent;
+}
+.navigation-custom ul li:hover,
+.navigation-custom ul li.hovered {
+	background-color: var(--white);
+	/* transition: background-color 0.9s; */
+}
+.navigation-custom ul li:nth-child(1) {
+	margin-top: 20px;
+	margin-bottom: 40px;
+	pointer-events: none;
+}
+.navigation-custom ul li a {
+	position: relative;
+	display: block;
+	width: 100%;
+	display: flex;
+	text-decoration: none;
+	color: var(--white);
+}
+.navigation-custom ul li:hover a,
+.navigation-custom ul li.hovered a {
+	color: var(--black);
+}
+.navigation-custom ul li a .icon {
+	position: relative;
+	display: block;
+	min-width: 60px;
+	min-height: 60px;
+	height: 60px;
+	line-height: 77px;
+	text-align: center;
+	pointer-events: none;
+}
+.navigation-custom ul li a .icon ion-icon {
+	font-size: 1.75em;
+}
+.navigation-custom ul li a .title {
+	position: relative;
+	display: block;
+	padding: 0 10px;
+	height: 60px;
+	line-height: 60px;
+	text-align: start;
+	white-space: nowrap;
+	pointer-events: none;
+}
+.navigation-custom ul li:hover a::before,
+.navigation-custom ul li.hovered a::before {
+	content: "";
+	position: absolute;
+	right: 0;
+	width: 50px;
+	height: 50px;
+	top: -50px;
+	background-color: transparent;
+	border-radius: 50%;
+	box-shadow: 35px 35px 0 10px var(--white);
+	pointer-events: none;
+}
+.navigation-custom ul li:hover a::after,
+.navigation-custom ul li.hovered a::after {
+	content: "";
+	position: absolute;
+	right: 0;
+	width: 50px;
+	height: 50px;
+	bottom: -50px;
+	background-color: transparent;
+	border-radius: 50%;
+	box-shadow: 35px -35px 0 10px var(--white);
+	pointer-events: none;
+}
+
+.toggle {
+	position: relative;
+	width: 60px;
+	height: 60px;
+	display: flex;
+	align-items: center;
+	font-size: 2.2em;
+	cursor: pointer;
+}
+.search {
+	position: relative;
+	width: 400px;
+	margin: 0 10px;
+}
+.search label {
+	position: relative;
+	width: 100%;
+}
+.search label input {
+	width: 100%;
+	height: 40px;
+	border-radius: 40px;
+	padding: 5px 20px;
+	outline: none;
+	padding-left: 35px;
+	border: 1px solid var(--black2);
+}
+.search label ion-icon {
+	position: absolute;
+	top: 0;
+	left: 10px;
+	font-size: 1.2em;
+}
+.user {
+	position: relative;
+	width: 40px;
+	height: 40px;
+
+	cursor: pointer;
+}
+.user img {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	min-width: 40px;
+	border-radius: 50%;
+	min-height: 40px;
+	height: 100%;
+	border-radius: 50%;
+	/* aspect-ratio: 1/1 !important; */
+	object-fit: cover;
+}

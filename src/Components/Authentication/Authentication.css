@@ -1,0 +1,45 @@
+.authContainer {
+	min-width: 100vw;
+	min-height: 100vh;
+	background-color: white;
+	position: fixed;
+	z-index: 9999;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.authContainer #close {
+	position: absolute;
+	right: 40px;
+	top: 40px;
+	font-size: 3em;
+}
+.authCard {
+	padding: 20px 40px;
+	border-radius: 20px;
+	box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+	position: relative;
+	min-height: 500px;
+	min-width: 300px;
+	max-width: 500px;
+	width: calc(100vw - 50px);
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+	align-items: center;
+}
+.text-center {
+	text-align: center;
+	line-height: 1.6em;
+}
+
+.authCard .signin,
+.authCard.signup {
+	padding-top: 20px;
+}
+.authCard form {
+	width: 100%;
+}

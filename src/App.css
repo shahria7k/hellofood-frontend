@@ -1,0 +1,361 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Ubuntu", sans-serif;
+}
+:root {
+	--black: #000;
+	--white: #fff;
+	--black1: #222;
+	--black2: #999;
+}
+
+::selection {
+	background: transparent;
+}
+::-moz-selection {
+	background: transparent;
+}
+* {
+	-webkit-touch-callout: none; /* iOS Safari */
+	-webkit-user-select: none; /* Safari */
+	-khtml-user-select: none; /* Konqueror HTML */
+	-moz-user-select: none; /* Old versions of Firefox */
+	-ms-user-select: none; /* Internet Explorer/Edge */
+	user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+
+	/*
+     Introduced in Internet Explorer 10.
+     See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
+   */
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	-webkit-tap-highlight-color: transparent;
+}
+body {
+	min-height: 100vh;
+	overflow-x: hidden;
+}
+.container-custom {
+	position: relative;
+	width: 100% !important;
+}
+
+.cardBox {
+	position: relative;
+	width: auto;
+	padding: 20px;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-gap: 30px;
+}
+.cardBox .card {
+	position: relative;
+	background-color: var(--white);
+	padding: 30px;
+	border-radius: 20px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	cursor: pointer;
+	box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+}
+.cardBox .card .numbers {
+	position: relative;
+	font-weight: 500;
+	color: var(--black);
+	font-size: 2.5em;
+}
+.cardBox .card .cardName {
+	color: var(--black2);
+	font-size: 1.1em;
+	margin-top: 5px;
+}
+.cardBox .card .iconBox {
+	font-size: 3.5em;
+	color: var(--black2);
+}
+.cardBox .card:hover {
+	background-color: var(--black);
+}
+.cardBox .card:hover .numbers,
+.cardBox .card:hover .cardName,
+.cardBox .card:hover .iconBox {
+	color: var(--white);
+}
+
+/* details */
+.details {
+	position: relative;
+	width: 100%;
+	padding: 20px;
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+	grid-gap: 30px;
+	margin-top: 10px;
+}
+.details .recentOrders {
+	position: relative;
+	width: 100%;
+	display: grid;
+	min-height: 500px;
+	background-color: var(--white);
+	padding: 20px;
+	box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+	border-radius: 20px;
+}
+.cardHeader {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+}
+.cardHeader h2 {
+	font-weight: 600;
+	color: var(--black);
+}
+.btn {
+	position: relative;
+	padding: 5px 10px;
+	background-color: var(--white);
+	text-decoration: none;
+	color: var(--black);
+	transition: 0.3s;
+	outline: 1px solid black;
+	border-radius: 6px !important;
+}
+.btn:hover {
+	background-color: var(--black);
+	color: var(--white);
+	border-color: var(--black);
+}
+.details table {
+	width: 100%;
+	border-collapse: collapse;
+	margin-top: 10px;
+}
+
+.details table thead td {
+	font-weight: 600;
+}
+.details table tr {
+	color: var(--black1);
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.details table tr:last-child {
+	border-bottom: none;
+}
+.details table tbody tr:hover {
+	background-color: var(--black);
+	color: var(--white);
+}
+.details table tr td {
+	padding: 10px;
+}
+.details .recentOrders table tr td:last-child {
+	text-align: end;
+}
+.details .recentOrders table tr td:nth-child(2),
+.details .recentOrders table tr td:nth-child(3) {
+	text-align: center;
+}
+.status.delivered {
+	padding: 2px 4px;
+	background-color: #8de02c;
+	color: var(--white);
+	border-radius: 4px;
+	font-size: 14px;
+	font-weight: 500;
+}
+.status.processing {
+	padding: 2px 4px;
+	background-color: #e02c2c;
+	color: var(--white);
+	border-radius: 4px;
+	font-size: 14px;
+	font-weight: 500;
+}
+.recentCustomers {
+	position: relative;
+	display: grid;
+	min-height: 500px;
+	padding: 20px;
+	background: var(--white);
+	box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+	border-radius: 20px;
+}
+
+.recentCustomers .imgBox {
+	position: relative;
+	width: 40px;
+	height: 40px;
+	border-radius: 50px;
+	overflow: hidden;
+}
+.recentCustomers .imgBox img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+}
+
+.recentCustomers table tr td {
+	padding: 12px 10px;
+}
+.recentCustomers table tr td h4 span {
+	font-size: 14px;
+	color: var(--black2);
+}
+.recentCustomers table tr td h4 {
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 1.2em;
+}
+.recentCustomers table tr:hover {
+	background-color: var(--black);
+	color: var(--white);
+}
+.input-group {
+	margin-top: 30px;
+	width: 100%;
+}
+.input-group label {
+	font-size: 1.1em;
+}
+.input-group .btn-google {
+	background-color: white;
+	border-color: black;
+	color: black;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	margin: 20px 0;
+	transition: all 0.3s;
+}
+.input-group ion-icon {
+	font-size: 2em;
+	display: inline-block;
+	padding: 0 8px;
+}
+.input-group input,
+.input-group textarea {
+	padding: 13px;
+	display: inline-block;
+	margin-top: 8px;
+	width: 100%;
+}
+.signin {
+	min-width: 70%;
+	max-width: 100%;
+}
+.signup {
+}
+.input-group input {
+	transition: all 0.3s;
+	background-color: white;
+	border-color: black;
+	color: black;
+	border: 1px solid;
+	outline: none;
+	border-radius: 5px !important;
+}
+.input-group #submit:hover {
+	background-color: black;
+	border-color: white;
+	color: white;
+}
+.input-group .btn-google:hover {
+	background-color: black;
+	border-color: white;
+	color: white;
+}
+.input-group {
+	margin-top: 30px;
+	width: 100%;
+}
+.input-group label {
+	font-size: 1.1em;
+}
+.input-group .btn-google {
+	background-color: white;
+	border-color: black;
+	color: black;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	margin: 20px 0;
+	transition: all 0.3s;
+}
+.input-group ion-icon {
+	font-size: 2em;
+	display: inline-block;
+	padding: 0 8px;
+}
+.input-group input {
+	padding: 13px;
+	display: inline-block;
+	margin-top: 8px;
+	width: 100%;
+}
+.signin {
+	min-width: 70%;
+	max-width: 100%;
+}
+
+.input-group #submit {
+	transition: all 0.3s;
+	background-color: white;
+	border-color: black;
+	color: black;
+}
+.input-group #submit:hover {
+	background-color: black;
+	border-color: white;
+	color: white;
+}
+.input-group .btn-google:hover {
+	background-color: black;
+	border-color: white;
+	color: white;
+}
+
+@media screen and (max-width: 991px) {
+	.cardBox {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+@media screen and (max-width: 768px) {
+	.cardBox {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	.details {
+		grid-template-columns: repeat(1, 1fr);
+	}
+	.recentOrders {
+		overflow-x: auto;
+	}
+	.status {
+		white-space: nowrap;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.cardBox {
+		grid-template-columns: repeat(1, 1fr);
+	}
+	.cardHeader h2 {
+		font-size: 20px;
+	}
+	.user {
+		margin-right: 15px;
+	}
+}
