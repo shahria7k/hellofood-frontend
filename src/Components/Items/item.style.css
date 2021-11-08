@@ -1,0 +1,47 @@
+.products table {
+	width: 100%;
+	border-collapse: collapse;
+	margin-top: 10px;
+}
+
+.products table thead td {
+	font-weight: 600;
+}
+.products table tr {
+	color: var(--black1);
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+	cursor: pointer;
+}
+.products table tr:last-child {
+	border-bottom: none;
+}
+/* .products table tbody tr:hover {
+	background-color: var(--black);
+	color: var(--white);
+} */
+.products table tr td {
+	padding: 10px;
+}
+.products table tr td:last-child {
+	text-align: end;
+}
+.products table tr td:nth-child(2),
+.products table tr td:nth-child(3) {
+	text-align: center;
+}
+.action.view {
+	padding: 2px 4px;
+	background-color: #8de02c;
+	color: var(--white);
+	border-radius: 4px;
+	font-size: 14px;
+	font-weight: 500;
+}
+.action.delete {
+	padding: 2px 4px;
+	background-color: #e02c2c;
+	color: var(--white);
+	border-radius: 4px;
+	font-size: 14px;
+	font-weight: 500;
+}
