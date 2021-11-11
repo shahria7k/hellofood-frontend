@@ -16,6 +16,7 @@ const Footer = () => {
 							<a
 								href="https://shahria7k.github.io/shahria7k/"
 								className="nav-link bg-black"
+								target="_blank"
 							>
 								Shahria Jaman Khan
 							</a>
