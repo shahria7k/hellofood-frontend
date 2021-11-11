@@ -14,7 +14,7 @@ const Header = () => {
 		height: window.innerHeight,
 	});
 	useEventListener("resize", () => {
-		setActiveStyle(!ativeStyle);
+		setActiveStyle(ativeStyle);
 		setWindowSize({ width: window.innerWidth, height: window.innerHeight });
 	});
 	const [hovered, setHovered] = useState("/" + current.split("/")[1]);
@@ -95,7 +95,13 @@ const Header = () => {
 	`}
 			</style>
 			<div className="container-custom">
-				<div className="navigation-custom">
+				<div
+					className="navigation-custom"
+					onClick={() => {
+						setActiveStyle(!ativeStyle);
+						console.log(ativeStyle);
+					}}
+				>
 					<ul>
 						<li>
 							<Link to="/home">
