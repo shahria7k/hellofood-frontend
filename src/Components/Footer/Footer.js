@@ -13,7 +13,10 @@ const Footer = () => {
 					<div className="col-lg-6 d-flex justify-content-center bg-black">
 						<h6 className="text-white bg-black text-center">
 							Designed and Developed by{" "}
-							<a href="https://shahriakhan.me" className="nav-link bg-black">
+							<a
+								href="https://shahria7k.github.io/shahria7k/"
+								className="nav-link bg-black"
+							>
 								Shahria Jaman Khan
 							</a>
 						</h6>
