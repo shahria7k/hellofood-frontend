@@ -2,7 +2,8 @@
 
 Front End Preview [Hello Food](https://hellofood-44499.web.app/)
 
-Check out the Exciting Schemes Just a Click.
+Back end REST API Preview [Hello Food](https://hello-food-app.herokuapp.com/)
+deployed to Heroku
 
 ## Features
 
