@@ -113,14 +113,14 @@ const Header = () => {
 								<span className="title">Home</span>
 							</Link>
 						</li>
-						<li className={hovered == "/dashboard" ? "hovered" : ""}>
+						{/* <li className={hovered == "/dashboard" ? "hovered" : ""}>
 							<Link to="/dashboard" className="navLink">
 								<span className="icon">
 									<ion-icon name="today-outline"></ion-icon>
 								</span>
 								<span className="title">Dashboard</span>
 							</Link>
-						</li>
+						</li> */}
 						<li className={hovered == "/customers" ? "hovered" : ""}>
 							<Link to="/customers" className="navLink">
 								<span className="icon">
@@ -182,7 +182,7 @@ const Header = () => {
 				</div>
 			</div>
 			<div className="main">
-				<div className="topbar pt-2">
+				<div className="topbar py-2">
 					<div
 						className="toggle"
 						onClick={() => {

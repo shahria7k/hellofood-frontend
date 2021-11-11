@@ -13,12 +13,13 @@ const SignUp = () => {
 		formState: { errors },
 	} = useForm();
 	const { signInUsingGoogle, signUpUsingPassword } = useAuth();
+	const [error, setError] = React.useState(null);
 	const onSubmit = (data) => {
 		signUpUsingPassword(data.email, data.password)
 			.then(() => {
 				history.push(redirect_URL);
 			})
-			.catch(console.dir);
+			.catch(setError);
 	};
 	return (
 		<div className="signin">
@@ -46,6 +47,11 @@ const SignUp = () => {
 					/>
 					{errors.exampleRequired && <span>This field is required</span>}
 				</div>
+				{error?.message && (
+					<span className="text-danger d-inline-block pt-4">
+						{error.message}
+					</span>
+				)}
 				<div className="input-group">
 					<input
 						className="btn btn-sumbit"

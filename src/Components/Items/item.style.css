@@ -29,7 +29,8 @@
 .products table tr td:nth-child(3) {
 	text-align: center;
 }
-.action.view {
+.action.view,
+.action.update {
 	padding: 2px 4px;
 	background-color: #8de02c;
 	color: var(--white);

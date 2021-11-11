@@ -5,7 +5,7 @@ const SingleItem = () => {
 	const { id } = useParams();
 	const [item, setItem] = React.useState(null);
 	useEffect(() => {
-		fetch(`http://localhost:8080/menu/${id}`)
+		fetch(`https://hello-food-app.herokuapp.com/menu/${id}`)
 			.then((res) => res.json())
 			.then((data) => setItem(data))
 			.catch((err) => console.log(err));

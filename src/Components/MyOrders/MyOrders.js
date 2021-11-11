@@ -1,11 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import useAuth from "../../Hooks/useAuth";
 import Spinner from "../Spinner/Spinner";
-const AllOrders = () => {
+const MyOrders = () => {
 	const [orders, setOrders] = React.useState([]);
 	const [loading, setLoading] = useState(true);
 	const [count, setCount] = useState(0);
-	const handleDelete = async (id) => {
+	const { user } = useAuth();
+	// eslint-disable-next-line react-hooks/exhaustive-deps
+	const handleDelete = useCallback(async (id) => {
 		const confirm = await window.confirm(
 			"Are you sure you want to delete this item?"
 		);
@@ -19,14 +22,17 @@ const AllOrders = () => {
 				.then(() => setCount(count + 1))
 				.catch((error) => console.log(error));
 		}
-	};
+	});
 	useEffect(() => {
-		fetch("https://hello-food-app.herokuapp.com/orders")
+		console.log(user.email);
+		fetch(
+			`https://hello-food-app.herokuapp.com/orders/myorders/?email=${user?.email}`
+		)
 			.then((res) => res.json())
 			.then((data) => setOrders(data))
 			.then(() => setLoading(false))
 			.catch((error) => console.log(error));
-	}, [count]);
+	}, [count, user]);
 	return (
 		<div className="dashboard">
 			<div className="cardBox">
@@ -70,7 +76,7 @@ const AllOrders = () => {
 			<div className="details">
 				<div className="recentOrders">
 					<div className="cardHeader ">
-						<h2>All Orders</h2>
+						<h2>My Orders</h2>
 					</div>
 					{loading ? (
 						<Spinner />
@@ -236,4 +242,4 @@ const AllOrders = () => {
 	);
 };
 
-export default AllOrders;
+export default MyOrders;
