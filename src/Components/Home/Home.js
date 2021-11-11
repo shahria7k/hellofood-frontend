@@ -25,10 +25,9 @@ const Home = () => {
 							src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80"
 							alt="First slide"
 						/>
-						<h1>something</h1>
 						<CarouseL.Caption>
-							<h3>First slide label</h3>
-							<p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+							<h3>Order Your favourite Food</h3>
+							<p>We have a wide range of menu you can order from </p>
 						</CarouseL.Caption>
 					</CarouseL.Item>
 
@@ -38,10 +37,10 @@ const Home = () => {
 							src="https://images.unsplash.com/photo-1544025162-d76694265947?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80"
 							alt="First slide"
 						/>
-						<h1>something</h1>
+
 						<CarouseL.Caption>
-							<h3>First slide label</h3>
-							<p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+							<h3>Order Your favourite Food</h3>
+							<p>We have a wide range of menu you can order from </p>
 						</CarouseL.Caption>
 					</CarouseL.Item>
 
@@ -51,10 +50,10 @@ const Home = () => {
 							src="https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1171&q=80"
 							alt="First slide"
 						/>
-						<h1>something</h1>
+
 						<CarouseL.Caption>
-							<h3>First slide label</h3>
-							<p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+							<h3>Order Your favourite Food</h3>
+							<p>We have a wide range of menu you can order from </p>
 						</CarouseL.Caption>
 					</CarouseL.Item>
 				</CarouseL>
