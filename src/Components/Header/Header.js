@@ -14,7 +14,7 @@ const Header = () => {
 		height: window.innerHeight,
 	});
 	useEventListener("resize", () => {
-		setActiveStyle(ativeStyle);
+		setActiveStyle(!ativeStyle);
 		setWindowSize({ width: window.innerWidth, height: window.innerHeight });
 	});
 	const [hovered, setHovered] = useState("/" + current.split("/")[1]);
