@@ -1,12 +1,18 @@
 # WELCOME TO Hello Food - Best Food Delivery App
 
-ABOUT [Hello Food](https://hellofood-44499.web.app/)
+Front End Preview [Hello Food](https://hellofood-44499.web.app/)
 
 Check out the Exciting Schemes Just a Click.
 
--
-- Surfing
-- Hot Air Ballooning
-- Lake Tohoe Adventure
-- Sailing Thailand - Phucket
-- Comfortable Travel
+## Features
+
+- Interactive menu bar
+- Checkout page
+- Order history
+- User profile
+- Delivery address
+- Payment
+- Order confirmation
+- Order status
+- Order details
+- Order history
