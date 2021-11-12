@@ -4,7 +4,6 @@ import AddItem from "./Components/AddItem/AddItem";
 import AllOrders from "./Components/AllOrders/AllOrders";
 import Authentication from "./Components/Authentication/Authentication";
 import Dashboard from "./Components/Dashboard/Dashboard";
-import Footer from "./Components/Footer/Footer";
 import Header from "./Components/Header/Header";
 import Home from "./Components/Home/Home";
 import Items from "./Components/Items/Items";

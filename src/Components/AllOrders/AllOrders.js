@@ -5,6 +5,7 @@ const AllOrders = () => {
 	const [orders, setOrders] = React.useState([]);
 	const [loading, setLoading] = useState(true);
 	const [count, setCount] = useState(0);
+
 	const handleDelete = async (id) => {
 		const confirm = await window.confirm(
 			"Are you sure you want to delete this item?"
@@ -71,6 +72,7 @@ const AllOrders = () => {
 				<div className="recentOrders">
 					<div className="cardHeader ">
 						<h2>All Orders</h2>
+						<button className="btn">View All</button>
 					</div>
 					{loading ? (
 						<Spinner />

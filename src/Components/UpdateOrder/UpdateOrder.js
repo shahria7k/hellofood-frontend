@@ -10,13 +10,7 @@ const UpdateOrder = () => {
 	const [order, setOrder] = useState(null);
 	const [cart, setCart] = useState([]);
 	const history = useHistory();
-	const {
-		register,
-		handleSubmit,
-		setValue,
-		watch,
-		formState: { errors },
-	} = useForm();
+	const { register, handleSubmit, setValue, errors } = useForm();
 	useEffect(() => {
 		fetch(`https://hello-food-app.herokuapp.com/orders/${id}`)
 			.then((res) => res.json())

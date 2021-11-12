@@ -18,7 +18,6 @@ const Items = () => {
 			})
 				.then((res) => res.json())
 				.then((data) => console.log(data))
-				.then(() => setLoading(false))
 				.catch((error) => console.log(error));
 		}
 	});
@@ -26,10 +25,12 @@ const Items = () => {
 		fetch("https://hello-food-app.herokuapp.com/menu")
 			.then((response) => response.json())
 			.then((data) => setProducts(data))
-			.then(() => setLoading(false))
 			.catch((error) => console.log(error));
 		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [handleDelete]);
+	}, [loading]);
+	useEffect(() => {
+		setLoading(false);
+	}, [products]);
 	return (
 		<div className="products container-fluid">
 			<div className="cardBox">

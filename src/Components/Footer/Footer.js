@@ -2,8 +2,8 @@ import React from "react";
 import "./Footer.css";
 const Footer = () => {
 	return (
-		<footer className="mt-5 py-5 bg-black">
-			<div className=" bg-black pb-4">
+		<footer className="mt-5 py-1 bg-black">
+			<div className=" bg-black ">
 				<div className="row pt-3 bg-black">
 					<div className="col-lg-6 bg-black">
 						<h3 className="text-light text-center bg-black">
@@ -17,6 +17,7 @@ const Footer = () => {
 								href="https://shahria7k.github.io/shahria7k/"
 								className="nav-link bg-black"
 								target="_blank"
+								rel="noreferrer"
 							>
 								Shahria Jaman Khan
 							</a>

@@ -98,8 +98,7 @@ const Header = () => {
 				<div
 					className="navigation-custom"
 					onClick={() => {
-						setActiveStyle(!ativeStyle);
-						console.log(ativeStyle);
+						setActiveStyle(true);
 					}}
 				>
 					<ul>

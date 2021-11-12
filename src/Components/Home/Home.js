@@ -14,7 +14,6 @@ const Home = () => {
 			.then(() => setLoading(false))
 			.catch((error) => console.log(error));
 	}, []);
-	console.log(products);
 	return (
 		<div className="container-custom mt-3">
 			<div className="banner-container">
