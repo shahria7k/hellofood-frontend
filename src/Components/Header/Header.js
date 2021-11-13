@@ -100,6 +100,7 @@ const Header = () => {
 					onClick={() => {
 						setActiveStyle(true);
 					}}
+					onBlur={() => setActiveStyle(true)}
 				>
 					<ul>
 						<li>
