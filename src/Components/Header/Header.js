@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
 import useEventListener from "../../Hooks/useEventListener";
 import "./Header.css";
+
 const Header = ({ activeStyle, setActiveStyle }) => {
 	const { user, signOut } = useAuth();
 
@@ -17,6 +18,7 @@ const Header = ({ activeStyle, setActiveStyle }) => {
 		setActiveStyle(activeStyle);
 		setWindowSize({ width: window.innerWidth, height: window.innerHeight });
 	});
+
 	const [hovered, setHovered] = useState("/" + current.split("/")[1]);
 	// const refs = useRef([]);
 	useEventListener("mouseover", (e) => {
@@ -97,7 +99,7 @@ const Header = ({ activeStyle, setActiveStyle }) => {
 }
 	`}
 			</style>
-			<div className="container-custom" onBlur={() => setActiveStyle(true)}>
+			<div className="container-custom" style={{ position: "absolute" }}>
 				<div
 					className="navigation-custom"
 					onClick={() => {
