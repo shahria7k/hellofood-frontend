@@ -75,9 +75,7 @@ const PlaceOrder = () => {
 										defaultValue={user.email}
 										{...register("email", { required: true })}
 									/>
-									{errors.exampleRequired && (
-										<span>This field is required</span>
-									)}
+									{errors && <span>This field is required</span>}
 								</div>
 								<div className="input-group">
 									<label htmlFor="phone">Phone</label>
@@ -88,9 +86,7 @@ const PlaceOrder = () => {
 										placeholder="Customers Phone number"
 										{...register("phone", { required: false })}
 									/>
-									{errors.exampleRequired && (
-										<span>This field is required</span>
-									)}
+									{errors && <span>This field is required</span>}
 								</div>
 								<div className="input-group">
 									<label htmlFor="address">Address</label>
@@ -101,9 +97,7 @@ const PlaceOrder = () => {
 										placeholder="Customers address"
 										{...register("address", { required: true })}
 									/>
-									{errors.exampleRequired && (
-										<span>This field is required</span>
-									)}
+									{errors && <span>This field is required</span>}
 								</div>
 								<div className="input-group">
 									<label htmlFor="quantity">quantity</label>
@@ -114,9 +108,7 @@ const PlaceOrder = () => {
 										placeholder="Quantity of the product"
 										{...register("quantity", { required: true })}
 									/>
-									{errors.exampleRequired && (
-										<span>This field is required</span>
-									)}
+									{errors && <span>This field is required</span>}
 								</div>
 								<div className="input-group">
 									<input

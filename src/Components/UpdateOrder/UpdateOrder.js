@@ -87,9 +87,7 @@ const UpdateOrder = () => {
 										placeholder="Customers Email"
 										{...register("email", { required: true })}
 									/>
-									{errors.exampleRequired && (
-										<span>This field is required</span>
-									)}
+									{errors && <span>This field is required</span>}
 								</div>
 								<div className="input-group">
 									<label htmlFor="phone">Phone</label>
@@ -100,9 +98,7 @@ const UpdateOrder = () => {
 										placeholder="Customers Phone number"
 										{...register("phone", { required: false })}
 									/>
-									{errors.exampleRequired && (
-										<span>This field is required</span>
-									)}
+									{errors && <span>This field is required</span>}
 								</div>
 								<div className="input-group">
 									<label htmlFor="address">Address</label>
@@ -113,9 +109,7 @@ const UpdateOrder = () => {
 										placeholder="Customers address"
 										{...register("address", { required: true })}
 									/>
-									{errors.exampleRequired && (
-										<span>This field is required</span>
-									)}
+									{errors && <span>This field is required</span>}
 								</div>
 								<div className="input-group">
 									<label htmlFor="quantity">quantity</label>
@@ -126,9 +120,7 @@ const UpdateOrder = () => {
 										placeholder="Quantity of the product"
 										{...register("quantity", { required: true })}
 									/>
-									{errors.exampleRequired && (
-										<span>This field is required</span>
-									)}
+									{errors && <span>This field is required</span>}
 								</div>
 								<div className="input-group">
 									<label htmlFor="" className="me-3">
@@ -149,9 +141,7 @@ const UpdateOrder = () => {
 										<option value="true">Delivered</option>
 										<option value="false">Processing</option>
 									</select>
-									{errors.exampleRequired && (
-										<span>This field is required</span>
-									)}
+									{errors && <span>This field is required</span>}
 								</div>
 								<div className="input-group">
 									<label htmlFor="payment" className="me-3">
@@ -172,9 +162,7 @@ const UpdateOrder = () => {
 										<option value="true">Paid</option>
 										<option value="false">Unpaid</option>
 									</select>
-									{errors.exampleRequired && (
-										<span>This field is required</span>
-									)}
+									{errors && <span>This field is required</span>}
 								</div>
 								<div className="input-group">
 									<input
