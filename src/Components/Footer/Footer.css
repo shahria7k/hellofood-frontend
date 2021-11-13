@@ -3,3 +3,6 @@ footer {
 	height: 80px;
 	width: 100%;
 }
+footer .row {
+	margin: 0 !important;
+}

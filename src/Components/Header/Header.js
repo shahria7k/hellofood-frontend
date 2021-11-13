@@ -1,20 +1,20 @@
 /* eslint-disable eqeqeq */
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router";
 import { Link } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
 import useEventListener from "../../Hooks/useEventListener";
 import "./Header.css";
-const Header = () => {
+const Header = ({ activeStyle, setActiveStyle }) => {
 	const { user, signOut } = useAuth();
-	const [ativeStyle, setActiveStyle] = useState(true);
-	let current = useLocation().pathname;
+
+	const current = useLocation().pathname;
 	const [windowSize, setWindowSize] = useState({
 		width: window.innerWidth,
 		height: window.innerHeight,
 	});
 	useEventListener("resize", () => {
-		setActiveStyle(ativeStyle);
+		setActiveStyle(activeStyle);
 		setWindowSize({ width: window.innerWidth, height: window.innerHeight });
 	});
 	const [hovered, setHovered] = useState("/" + current.split("/")[1]);
@@ -29,10 +29,13 @@ const Header = () => {
 			setHovered("/" + current.split("/")[1]);
 		}
 	});
+	useEffect(() => {
+		console.log(activeStyle, "changed");
+	}, [activeStyle]);
 	return (
 		<>
 			<style>
-				{ativeStyle
+				{activeStyle
 					? `
 	.navigation-custom{
 		width:  ${windowSize.width <= 991 ? "0px" : "80px"};
@@ -94,13 +97,21 @@ const Header = () => {
 }
 	`}
 			</style>
-			<div className="container-custom">
+			<div className="container-custom" onBlur={() => setActiveStyle(true)}>
 				<div
 					className="navigation-custom"
 					onClick={() => {
 						setActiveStyle(true);
 					}}
-					onBlur={() => setActiveStyle(true)}
+					// onBlur={() => {
+					// 	setActiveStyle(!true);
+					// }}
+					onMouseLeave={() => {
+						setActiveStyle(true);
+					}}
+					onMouseEnter={() => {
+						setActiveStyle(false);
+					}}
 				>
 					<ul>
 						<li>
@@ -192,7 +203,7 @@ const Header = () => {
 					<div
 						className="toggle"
 						onClick={() => {
-							setActiveStyle(!ativeStyle);
+							setActiveStyle(!activeStyle);
 						}}
 					>
 						<ion-icon name="menu-outline"></ion-icon>

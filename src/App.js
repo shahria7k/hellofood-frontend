@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
 import AddItem from "./Components/AddItem/AddItem";
@@ -14,12 +15,23 @@ import SingleItem from "./Components/SingleItem/SingleItem";
 import UpdateOrder from "./Components/UpdateOrder/UpdateOrder";
 import AuthProvider from "./Context/AuthProvider";
 function App() {
+	const [activeStyle, setActiveStyle] = useState(true);
 	return (
 		<AuthProvider>
 			<Router>
-				<Header></Header>
+				<Header
+					activeStyle={activeStyle}
+					setActiveStyle={setActiveStyle}
+				></Header>
 
-				<div className="main" style={{ marginTop: "60px" }}>
+				<div
+					className="main"
+					style={{ marginTop: "60px" }}
+					onClick={() => {
+						console.log("clicked");
+						setActiveStyle(true);
+					}}
+				>
 					{/* <Spinner></Spinner> */}
 					<Switch>
 						<Route exact path="/">
