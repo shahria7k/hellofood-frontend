@@ -134,20 +134,25 @@
 }
 .user {
 	position: relative;
-	width: 40px;
-	height: 40px;
-
+	width: 50 px;
+	height: 50 px;
 	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 .user img {
-	position: absolute;
-	top: 0;
 	width: 100%;
 	min-width: 40px;
 	border-radius: 50%;
 	min-height: 40px;
-	height: 100%;
+	height: 40px;
 	border-radius: 50%;
 	/* aspect-ratio: 1/1 !important; */
 	object-fit: cover;
+}
+.user a {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
