@@ -11,13 +11,12 @@ const Testimonials = () => {
 		setWindowWidth(window.innerWidth);
 	});
 	React.useEffect(() => {
-		fetch("https://hello-food-app.herokuapp.com/menu")
+		fetch(`${process.env.REACT_APP_BACKEND}/menu`)
 			.then((res) => res.json())
 			.then((data) => setProducts(data))
 			.then(() => setLoading(false))
 			.catch((error) => console.log(error));
 	}, []);
-	console.log(windowWidth);
 	const renderProducts = () => {
 		return products.map((product) => (
 			<div className="mx-4" key={product._id}>
@@ -74,7 +73,7 @@ const Testimonials = () => {
 								? windowWidth / 370
 								: windowWidth / 320
 						)}
-						slide={products.length}
+						slide={1}
 						swiping={true}
 						responsive={true}
 						dynamic={true}

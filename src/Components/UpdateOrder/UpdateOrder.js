@@ -18,7 +18,7 @@ const UpdateOrder = () => {
 	}, []);
 	useEffect(() => {
 		if (order) {
-			fetch(`https://hello-food-app.herokuapp.com/menu/${order?.cart[0]._id}`)
+			fetch(`${process.env.REACT_APP_BACKEND}/menu/${order?.cart[0]._id}`)
 				.then((res) => res.json())
 				.then((data) => setCart(data))
 				.catch((err) => console.log(err));

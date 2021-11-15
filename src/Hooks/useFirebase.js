@@ -11,6 +11,7 @@ import {
 } from "firebase/auth";
 import { getStorage, ref, uploadBytesResumable } from "firebase/storage";
 import { useEffect, useState } from "react";
+import { useLocalStorage } from "./useStorage";
 const firebaseConfig = {
 	apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
 	authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
@@ -24,6 +25,10 @@ const firebaseConfig = {
 const firebaseApp = initializeApp(firebaseConfig);
 const storage = getStorage(firebaseApp);
 function useFirebase() {
+	const [token, setToken, removeToken] = useLocalStorage(
+		"authorization",
+		"bearer "
+	);
 	const [isLoading, setIsLoading] = useState(true);
 	const [user, setUser] = useState(null);
 	const [error, setError] = useState(null);
@@ -43,7 +48,7 @@ function useFirebase() {
 	function signOut() {
 		logOut(auth)
 			.then(() => {
-				//state updated with Auth state watcher
+				removeToken();
 			})
 			.catch((error) => {
 				const newError = {};
@@ -57,6 +62,12 @@ function useFirebase() {
 		const unmount = onAuthStateChanged(auth, (user) => {
 			if (user) {
 				setUser(user);
+				user
+					.getIdToken()
+					.then((jwt) => {
+						setToken(token + jwt);
+					})
+					.catch((error) => setError(error));
 				setError(null);
 			} else {
 				setUser(null);
@@ -76,9 +87,14 @@ function useFirebase() {
 		const uploadTask = uploadBytesResumable(storageRef, file, metadata);
 		return uploadTask;
 	};
-
+	const session = {
+		token,
+		setToken,
+		removeToken,
+	};
 	const authentication = {
 		setIsLoading,
+		session,
 		isLoading,
 		error,
 		setError,

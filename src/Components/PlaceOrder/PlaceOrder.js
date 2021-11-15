@@ -10,7 +10,7 @@ const PlaceOrder = () => {
 	const history = useHistory();
 	const { register, handleSubmit, errors } = useForm();
 	useEffect(() => {
-		fetch(`https://hello-food-app.herokuapp.com/menu/${id}`)
+		fetch(`${process.env.REACT_APP_BACKEND}/menu/${id}`)
 			.then((res) => res.json())
 			.then((data) => {
 				const newCart = [];
@@ -27,7 +27,7 @@ const PlaceOrder = () => {
 		newOrder.phone = data.phone;
 		newOrder.address = data.address;
 		newOrder.cart = newCart;
-		fetch(`https://hello-food-app.herokuapp.com/orders`, {
+		fetch(`${process.env.REACT_APP_BACKEND}/orders`, {
 			method: "POST",
 			body: JSON.stringify(newOrder),
 			headers: {

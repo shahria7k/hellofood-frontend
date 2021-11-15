@@ -9,7 +9,7 @@ const Home = () => {
 	const [products, setProducts] = React.useState([]);
 	const [loading, setLoading] = React.useState(true);
 	React.useEffect(() => {
-		fetch("https://hello-food-app.herokuapp.com/menu")
+		fetch(`${process.env.REACT_APP_BACKEND}/menu`)
 			.then((res) => res.json())
 			.then((data) => setProducts(data))
 			.then(() => setLoading(false))

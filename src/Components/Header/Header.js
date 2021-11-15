@@ -1,5 +1,5 @@
 /* eslint-disable eqeqeq */
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useLocation } from "react-router";
 import { Link } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
@@ -31,9 +31,7 @@ const Header = ({ activeStyle, setActiveStyle }) => {
 			setHovered("/" + current.split("/")[1]);
 		}
 	});
-	useEffect(() => {
-		console.log(activeStyle, "changed");
-	}, [activeStyle]);
+
 	return (
 		<>
 			<style>

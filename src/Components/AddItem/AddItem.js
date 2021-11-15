@@ -20,7 +20,7 @@ const AddItem = () => {
 			"Content-Type": "application/json",
 		};
 
-		fetch("https://hello-food-app.herokuapp.com/menu", {
+		fetch(process.env.REACT_APP_BACKEND, {
 			method: "POST",
 			body: JSON.stringify(data),
 			headers: headersList,
