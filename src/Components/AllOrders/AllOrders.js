@@ -4,20 +4,20 @@ import Spinner from "../Spinner/Spinner";
 const AllOrders = () => {
 	const [orders, setOrders] = React.useState([]);
 	const [loading, setLoading] = useState(true);
-	const [count, setCount] = useState(0);
 
 	const handleDelete = async (id) => {
 		const confirm = await window.confirm(
 			"Are you sure you want to delete this item?"
 		);
 		if (confirm) {
-			setLoading(true);
 			fetch(`https://hello-food-app.herokuapp.com/orders/${id}`, {
 				method: "DELETE",
 			})
 				.then((res) => res.json())
 				.then((data) => console.log(data))
-				.then(() => setCount(count + 1))
+				.then(() => {
+					setOrders(orders.filter((product) => product._id !== id));
+				})
 				.catch((error) => console.log(error));
 		}
 	};
@@ -27,7 +27,7 @@ const AllOrders = () => {
 			.then((data) => setOrders(data))
 			.then(() => setLoading(false))
 			.catch((error) => console.log(error));
-	}, [count]);
+	}, []);
 	return (
 		<div className="dashboard">
 			<div className="cardBox">

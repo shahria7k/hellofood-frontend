@@ -150,10 +150,10 @@ body {
 .details table tr:last-child {
 	border-bottom: none;
 }
-.details table tbody tr:hover {
+/* .details table tbody tr:hover {
 	background-color: var(--black);
 	color: var(--white);
-}
+} */
 .details table tr td {
 	padding: 10px;
 }

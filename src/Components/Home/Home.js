@@ -3,6 +3,7 @@ import { Carousel as CarouseL } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Spinner from ".././Spinner/Spinner";
 import Footer from "../Footer/Footer";
+import Testimonials from "../Testimonials/Testimonials";
 import "./Home.css";
 const Home = () => {
 	const [products, setProducts] = React.useState([]);
@@ -145,6 +146,7 @@ const Home = () => {
 					)}
 				</div>
 			</div>
+			<Testimonials></Testimonials>
 			<Footer></Footer>
 		</div>
 	);
