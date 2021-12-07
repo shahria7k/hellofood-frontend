@@ -14,7 +14,7 @@ const MyOrders = () => {
 		);
 		if (confirm) {
 			setLoading(true);
-			fetch(`https://hello-food-app.herokuapp.com/orders/${id}`, {
+			fetch(`${process.env.REACT_APP_BACKEND}/orders/${id}`, {
 				method: "DELETE",
 			})
 				.then((res) => res.json())
@@ -26,7 +26,7 @@ const MyOrders = () => {
 	useEffect(() => {
 		console.log(user.email);
 		fetch(
-			`https://hello-food-app.herokuapp.com/orders/myorders/?email=${user?.email}`
+			`${process.env.REACT_APP_BACKEND}/orders/myorders/?email=${user?.email}`
 		)
 			.then((res) => res.json())
 			.then((data) => setOrders(data))

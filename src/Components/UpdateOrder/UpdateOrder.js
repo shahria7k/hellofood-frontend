@@ -12,7 +12,7 @@ const UpdateOrder = () => {
 	const history = useHistory();
 	const { register, handleSubmit, setValue, errors } = useForm();
 	useEffect(() => {
-		fetch(`https://hello-food-app.herokuapp.com/orders/${id}`)
+		fetch(`${process.env.REACT_APP_BACKEND}/orders/${id}`)
 			.then((res) => res.json())
 			.then((data) => setOrder(data));
 	}, []);
@@ -40,7 +40,7 @@ const UpdateOrder = () => {
 		newOrder.address = data.address;
 		newOrder.cart[0].quantity = data.quantity;
 		console.log(newOrder);
-		fetch(`https://hello-food-app.herokuapp.com/orders/${id}`, {
+		fetch(`${process.env.REACT_APP_BACKEND}/orders/${id}`, {
 			method: "PATCH",
 			body: JSON.stringify(newOrder),
 			headers: {

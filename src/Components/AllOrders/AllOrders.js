@@ -10,7 +10,7 @@ const AllOrders = () => {
 			"Are you sure you want to delete this item?"
 		);
 		if (confirm) {
-			fetch(`https://hello-food-app.herokuapp.com/orders/${id}`, {
+			fetch(`${process.env.REACT_APP_BACKEND}/${id}`, {
 				method: "DELETE",
 			})
 				.then((res) => res.json())
@@ -22,7 +22,7 @@ const AllOrders = () => {
 		}
 	};
 	useEffect(() => {
-		fetch("https://hello-food-app.herokuapp.com/orders")
+		fetch(`${process.env.REACT_APP_BACKEND}/orders`)
 			.then((res) => res.json())
 			.then((data) => setOrders(data))
 			.then(() => setLoading(false))
